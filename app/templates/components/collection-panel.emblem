@@ -1,6 +1,4 @@
 .collection-panel
-  p One collection !
-
   ul
     li
       = component 'collection-thumbnail'
