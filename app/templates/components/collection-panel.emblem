@@ -1,0 +1,26 @@
+.collection-panel
+  p One collection !
+
+  ul
+    li
+      = component 'collection-thumbnail'
+    li
+      = component 'collection-thumbnail'
+    li
+      = component 'collection-thumbnail'
+    li
+      = component 'collection-thumbnail'
+    li
+      = component 'collection-thumbnail'
+    li
+      = component 'collection-thumbnail'
+    li
+      = component 'collection-thumbnail'
+    li
+      = component 'collection-thumbnail'
+    li
+      = component 'collection-thumbnail'
+    li
+      = component 'collection-thumbnail'
+    li
+      = component 'collection-thumbnail'
