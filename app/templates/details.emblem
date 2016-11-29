@@ -3,3 +3,8 @@
 h1 {{ model.title }}
 img src="{{ model.thumbnailSrc }}"
 
+h2 Episodes
+ul
+  each model.episodes as |episode|
+    li {{ episode.title }}
+
