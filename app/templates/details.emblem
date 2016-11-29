@@ -1,3 +1,5 @@
-h1 details !
 = link-to 'index' | Go to collections
+
+h1 {{ model.title }}
+img src="{{ model.thumbnailSrc }}"
 

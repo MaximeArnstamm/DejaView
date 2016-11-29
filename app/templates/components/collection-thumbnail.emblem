@@ -1,3 +1,4 @@
 .collection-thumbnail
-  = link-to 'details'
-    img src='http://www.bdtheque.com/repupload/T/T_52401.JPG'
+  = link-to 'details' series
+    img src="{{ series.thumbnailSrc }}"
+    p {{ series.title }}

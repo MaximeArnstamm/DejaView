@@ -1,24 +1,5 @@
 .collection-panel
   ul
-    li
-      = component 'collection-thumbnail'
-    li
-      = component 'collection-thumbnail'
-    li
-      = component 'collection-thumbnail'
-    li
-      = component 'collection-thumbnail'
-    li
-      = component 'collection-thumbnail'
-    li
-      = component 'collection-thumbnail'
-    li
-      = component 'collection-thumbnail'
-    li
-      = component 'collection-thumbnail'
-    li
-      = component 'collection-thumbnail'
-    li
-      = component 'collection-thumbnail'
-    li
-      = component 'collection-thumbnail'
+    each seriess as |series|
+      li
+        = component 'collection-thumbnail' series=series

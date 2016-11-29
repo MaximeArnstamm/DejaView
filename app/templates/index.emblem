@@ -1,3 +1,3 @@
 h1 So we start !
 
-= component 'collection-panel'
+= component 'collection-panel' seriess=model
