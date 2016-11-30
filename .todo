@@ -1,0 +1,22 @@
+client:
+  ☐ CSS / template
+  ☐ page bibliothèque -> page générale avec toutes les bds
+    ☐ paginée ou infinite scroll
+  ☐ page série -> chapeau série + liste des bds de la série
+  ☐ reader :
+    ☐ 1 version : bd déjà dézippée dans le TMP
+    ☐ 2 version : lire un pdf qui est dans le TMP
+    ☐ Apres : service qui télécharge la bd et la met dans le TMP et la dezip/derar si besoin
+      ☐ si c'est long, écran de téléchargement :)
+      ☐ suppression de la bd dans TMP quand on a lu ou quand on quitte le player ?
+  ☐ recherche de bd
+  ☐ tri par auteur
+  ☐ tri par série
+  ☐ base locale (hash ou autre):
+    ☐ auteurs, séries, bds, vignettes
+
+server :
+  ☐ service qui peuple la base locale d'un coup
+    ☐ fonction pour maintenir la base lors d'un ajout/suppr bd
+  ☐ service qui permet de récup la bd complete
+  ☐ service qui permet de récup la bd page par page
