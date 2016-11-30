@@ -1,0 +1,8 @@
+h1 {{ firstEpisode.series_title }}
+img src="{{ thumbnailSrc }}" width=150
+
+h2 Episodes
+ul
+  each series as |episode|
+    li {{ episode.episode_title }}
+

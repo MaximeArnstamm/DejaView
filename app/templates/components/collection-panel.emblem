@@ -1,4 +1,4 @@
 section.grid-wrap
   ul.grid
-    each seriess as |series|
-      = component 'collection-thumbnail' series=series
+    each collection as |series|
+      = component 'series-thumbnail' series=series

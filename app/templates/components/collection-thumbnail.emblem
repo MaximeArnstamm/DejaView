@@ -1,5 +1,0 @@
-= link-to 'details' series
-  img src="{{ series.thumbnailSrc }}" width="100%" height="300px"
-  .thumblabel
-    h3 {{ series.title }}
-    h4 X Albums

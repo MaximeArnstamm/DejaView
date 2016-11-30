@@ -1,24 +1,33 @@
 import Ember from 'ember';
+import fetch from "ember-network/fetch";
 
 export default Ember.Service.extend({
-  series: [
-    {
-      id: 1,
-      thumbnailSrc: 'http://www.bdtheque.com/repupload/T/T_52401.JPG',
-      title: 'taipi',
-      episodes: [
-        { number: 1, title: 'great' },
-        { number: 2, title: 'crazy' },
-        { number: 3, title: 'dingo' },
-        { number: 4, title: 'foufou' },
-        { number: 5, title: 'whaou' },
-      ]
-    },
-    { id: 2, thumbnailSrc: 'http://www.bdtheque.com/repupload/T/T_52401.JPG', title: 'taipi' },
-    { id: 3, thumbnailSrc: 'http://www.bdtheque.com/repupload/T/T_52401.JPG', title: 'taipi' },
-    { id: 4, thumbnailSrc: 'http://www.bdtheque.com/repupload/T/T_52401.JPG', title: 'taipi' },
-    { id: 5, thumbnailSrc: 'http://www.bdtheque.com/repupload/T/T_52401.JPG', title: 'taipi' }
-  ],
-  getAll() { return this.get('series'); },
+  comic_books: null,
+  getAll() { 
+    if(this.get('comic_books')) {
+      return new Promise((resolve) => resolve(this.get('comic_books')));
+    }
+    return fetch('books')
+      .then((response) => response.json()) 
+      .then((wrapper) => wrapper.comic_books)
+      .then((comic_books) => { 
+        this.set('comic_books', comic_books) ;
+        return comic_books;
+      });
+  },
+  getAllSeries() {
+    return this.getAll().then((all) => { 
+      let series_titles = all.mapBy('series_title').uniq();
+      let result = series_titles.reduce((acc, el) => {
+        acc.push(all.filterBy('series_title', el));
+        return acc;
+      }, []);
+      return result;
+    });
+  },
+  getSeriesByTitle(title) {
+    return this.getAllSeries()
+      .then(all => all.find(series => series[0].series_title === title ));
+  },
   getById(id) { return this.get('series').findBy('id', id); }
 });
