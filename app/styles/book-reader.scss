@@ -1,0 +1,24 @@
+.book-reader {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background-color: black;
+
+  .command {
+    height: 100%;
+    width: 33%;
+    position: absolute;
+    cursor: pointer;
+  }
+
+  .left {
+    left: 0;
+  }
+
+  .right {
+    right: 0;
+  }
+}

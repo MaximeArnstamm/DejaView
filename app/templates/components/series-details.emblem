@@ -4,5 +4,6 @@ img src="{{ thumbnailSrc }}" width=150
 h2 Episodes
 ul
   each series as |episode|
-    li {{ episode.episode_title }}
-
+    li
+      = link-to 'reader' episode.id 0
+        = episode.episode_title

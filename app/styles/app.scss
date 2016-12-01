@@ -2,3 +2,8 @@
 @import 'main';
 @import 'collection-panel';
 @import 'collection-thumbnail';
+@import 'book-reader';
+
+html, body, body > div { height: 100%; margin: 0; }
+
+

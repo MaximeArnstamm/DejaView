@@ -29,5 +29,8 @@ export default Ember.Service.extend({
     return this.getAllSeries()
       .then(all => all.find(series => series[0].series_title === title ));
   },
-  getById(id) { return this.get('series').findBy('id', id); }
+  getBookById(id) { 
+    return this.getAll()
+      .then(all => all.findBy('id', id));
+  }
 });

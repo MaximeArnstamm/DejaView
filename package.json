@@ -44,6 +44,7 @@
     "ember-electron": "1.10.8",
     "ember-export-application-global": "^1.0.5",
     "ember-inspector": "2.0.4",
+    "ember-keyboard": "2.1.9",
     "ember-load-initializers": "^0.5.1",
     "ember-network": "0.3.0",
     "ember-resolver": "^2.0.3",

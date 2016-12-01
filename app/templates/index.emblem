@@ -1,2 +1,2 @@
 .container
-  = component 'collection-panel' seriess=model
+  = component 'collection-panel' collection=model
