@@ -1,7 +1,43 @@
-.collection-panel {
-  ul {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-  }
+.grid-wrap {
+	clear: both;
+	margin: 0 auto;
+	padding: 0;
+	max-width: 1260px;
+}
+
+.grid {
+	margin: 30px auto;
+	padding: 0;
+	list-style: none;
+	min-height: 500px;
+}
+
+.grid li {
+	display: inline-block;
+	overflow: hidden;
+	width: 240px;
+	text-align: left;
+	vertical-align: top;
+	border-radius: 4px;
+}
+
+/* Title box */
+.title-box h2 {
+	display: block;
+	margin: 7px;
+	padding: 20px;
+	background: #2E3444;
+	color: #D3EEE2;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 300;
+}
+
+.title-box h2 a {
+	display: block;
+	font-weight: 900;
+}
+
+.title-box h2 a:hover {
+	color: #D3EEE2;
 }

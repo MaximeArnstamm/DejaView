@@ -1,5 +1,4 @@
-.collection-panel
-  ul
+section.grid-wrap
+  ul.grid
     each seriess as |series|
-      li
-        = component 'collection-thumbnail' series=series
+      = component 'collection-thumbnail' series=series

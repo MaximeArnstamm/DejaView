@@ -1,3 +1,2 @@
-h1 So we start !
-
-= component 'collection-panel' seriess=model
+.container
+  = component 'collection-panel' seriess=model
