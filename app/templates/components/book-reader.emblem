@@ -1,2 +1,3 @@
-.command.left click='previous'
-.command.right click='next'
+.top click='top'
+.left click='previous'
+.right click='next'

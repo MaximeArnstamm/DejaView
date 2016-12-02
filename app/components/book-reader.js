@@ -37,5 +37,8 @@ export default Ember.Component.extend(EKMixin, {
     previous(){
       this.set('currentPage', this.get('currentPage') - 1);
     },
+    top(){
+      this.get('goToDetails')();
+    },
   }
 });

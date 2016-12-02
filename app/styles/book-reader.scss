@@ -7,18 +7,26 @@
   position: relative;
   background-color: black;
 
-  .command {
-    height: 100%;
+  .top, .left, .right {
     width: 33%;
     position: absolute;
     cursor: pointer;
   }
 
+  .top {
+    width: 33%;
+    height: 33%;
+    right: 33%;
+    top: 0;
+  }
+
   .left {
+    height: 100%;
     left: 0;
   }
 
   .right {
+    height: 100%;
     right: 0;
   }
 }
