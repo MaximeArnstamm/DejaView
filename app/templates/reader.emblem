@@ -1,1 +1,1 @@
-= component 'book-reader' book=model goToDetails=(action "goToDetails")
+= component 'book-reader' imgUrl=imgUrl esc=(action "goToDetails") right=(action 'next') left=(action 'previous')

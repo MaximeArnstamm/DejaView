@@ -5,40 +5,31 @@ import { keyDown } from 'ember-keyboard';
 export default Ember.Component.extend(EKMixin, {
   classNames: ['book-reader'],
   attributeBindings: ['style'],
-  style: Ember.computed('currentImageUrl', function() {
-    let back = `background-image: url('${ this.get('currentImageUrl')}'`;
+  style: Ember.computed('imgUrl', function() {
+    let back = `background-image: url('${ this.get('imgUrl')}'`;
     return Ember.String.htmlSafe(back);
   }),
   activateKeyboard: Ember.on('init', function() {
     this.set('keyboardActivated', true);
   }),
   bindRight: Ember.on(keyDown('ArrowRight'), function() {
-      this.actions.next.call(this);
+      this.actions.right.call(this);
   }),
   bindLeft: Ember.on(keyDown('ArrowLeft'), function() {
-      this.actions.previous.call(this);
+      this.actions.left.call(this);
   }),
   bindEsc: Ember.on(keyDown('Escape'), function() {
-    this.get('goToDetails')();
+    this.get('esc')();
   }),
-  currentPage: 0,
-  currentImageUrl: Ember.computed('currentPage', function() {
-    return this.imageUrl(this.get('currentPage'));
-  }),
-  imageUrl: function(page) { return `books/${this.get('book.id')}/pages/${page}`; },
-  fetchNextImage() {
-    (new Image()).src = this.imageUrl(this.get('currentPage') + 1);
-  },
   actions: {
-    next(){
-      this.set('currentPage', this.get('currentPage') + 1);
-      this.fetchNextImage();
+    right(){
+      this.get('right')();
     },
-    previous(){
-      this.set('currentPage', this.get('currentPage') - 1);
+    left(){
+      this.get('left')();
     },
     top(){
-      this.get('goToDetails')();
+      this.get('esc')();
     },
   }
 });
