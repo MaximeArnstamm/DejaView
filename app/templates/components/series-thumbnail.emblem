@@ -1,5 +1,5 @@
 = link-to 'details' firstEpisode.series_title
-  img src="{{ thumbnailSrc }}" width="100%" height="300px"
+  img src="{{ thumbnailSrc }}"
   .thumblabel
-    h3 {{ series.title }}
-    h4 X Albums
+    h3 {{ firstEpisode.series_title }}
+    h4 {{ series.length  }} Albums
