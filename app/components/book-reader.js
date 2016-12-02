@@ -15,10 +15,10 @@ export default Ember.Component.extend(EKMixin, {
   bindRight: Ember.on(keyDown('ArrowRight'), function() {
       this.actions.next.call(this);
   }),
-  bindEsc: Ember.on(keyDown('ArrowLeft'), function() {
+  bindLeft: Ember.on(keyDown('ArrowLeft'), function() {
       this.actions.previous.call(this);
   }),
-  bindLeft: Ember.on(keyDown('Escape'), function() {
+  bindEsc: Ember.on(keyDown('Escape'), function() {
     this.get('goToDetails')();
   }),
   currentPage: 0,
