@@ -6,7 +6,8 @@ export default Ember.Component.extend({
   init(){
     this._super(...arguments);
     let firstEpisode = this.get('series')[0];
-    this.set('thumbnailSrc', `books/${firstEpisode.id}/thumbnail`);
+    firstEpisode.thumbnail()
+      .then(src => this.set('thumbnailSrc', src));
     this.set('firstEpisode', firstEpisode);
   }
 });
