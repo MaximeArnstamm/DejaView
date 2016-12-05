@@ -1,0 +1,19 @@
+.config-panel style='background-color: white; margin: 20px;'
+  h1 Config !
+
+  .div
+    p urls
+    each seriesService.remoteUrls as |url|
+      li {{ url }}
+
+    = input value=newUrl enter='addUrl'
+
+  .div
+    p local folder
+    each seriesService.localFolders as |folder|
+      li {{ folder }}
+
+    button click='addLocalInventory' add local inventory
+
+  .div
+    link-to 'index' | Go Home

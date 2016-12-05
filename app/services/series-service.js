@@ -27,11 +27,7 @@ export default Ember.Service.extend({
         return books;
       });
   },
-  getAll() { 
-    if(this.get('comic_books.length') !== 0) {
-      return new Promise((resolve) => resolve(this.get('comic_books')));
-    }
-
+  loadFromAll() {
     let remotePromises = this.get('remoteUrls').map(url => this.loadFromRemote(url));
     let localPromises = this.get('localFolders').map(folder => this.loadFromLocal(folder));
 
@@ -40,6 +36,12 @@ export default Ember.Service.extend({
       this.set('comic_books', books);
       return this.get('comic_books') ;
     });
+  },
+  getAll() { 
+    if(this.get('comic_books.length') !== 0) {
+      return new Promise((resolve) => resolve(this.get('comic_books')));
+    }
+    return this.loadFromAll();
   },
   getAllSeries() {
     return this.getAll().then((all) => { 

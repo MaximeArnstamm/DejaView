@@ -1,2 +1,5 @@
+
+= link-to 'config' | Config
+
 .container
   = component 'collection-panel' collection=model
