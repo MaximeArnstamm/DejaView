@@ -1,10 +1,12 @@
 import Book from "./book";
 
-let JSZip = require('jszip');
-let fs = require('fs');
-
 export default Book.extend({
+  nodeJszip: null,
+  nodeFs: null,
   pageSrc(index) {
+    let JSZip = this.get('nodeJszip');
+    let fs = this.get('nodeFs');
+
     return new JSZip.external.Promise((resolve, reject) => {
       fs.readFile(this.get('path'), function(err, data) {
         if (err) {

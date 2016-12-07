@@ -9,8 +9,12 @@ export default Ember.Component.extend({
     },
     addLocalInventory() {
       const {dialog} = require('electron').remote;
-      dialog.showOpenDialog({properties: ['openFile']}, path => {
+      dialog.showOpenDialog({
+        properties: ['openFile', 'openDirectory'], 
+        filters: [{name: 'comics', extensions: ['cbz']}, {name: 'inventory', extensions: ['json']}]
+      }, path => {
         this.get('seriesService.localFolders').pushObject(path[0]);
+        this.get('seriesService').loadFromAll();
       });
     }
   }

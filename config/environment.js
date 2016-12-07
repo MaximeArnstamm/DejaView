@@ -6,6 +6,7 @@ module.exports = function(environment) {
     environment: environment,
     rootURL: null,
     locationType: 'hash',
+    electron: process.env.EMBER_CLI_ELECTRON,
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
